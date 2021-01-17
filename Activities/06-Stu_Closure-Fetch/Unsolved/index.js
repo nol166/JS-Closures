@@ -37,6 +37,6 @@ searchForm.addEventListener('submit', e => {
 const displayImages = images => {
     images.map(
         image =>
-            (imageDiv.innerHTML += `<img src=${image.images.downsized.url} key=${image.id}>`)
+            (imageDiv.innerHTML += `<li><img src=${image.images.downsized.url} key=${image.id}></li>`)
     )
 }
