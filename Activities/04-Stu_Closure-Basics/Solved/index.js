@@ -1,16 +1,21 @@
-// Refactor a countdown function with a hardcoded starting number inside a closure so that it can count down from a user provided number
-
-const countDown = (amount, increment) => {
-    let countFrom = amount + increment
+const makeCountDown = (startingNum, decreaseBy) => {
+    let countFrom = startingNum + decreaseBy
     return (decrement = () => {
-        countFrom -= increment
+        countFrom -= decreaseBy
         return countFrom
     })
 }
 
-const countingDown = countDown(90, 5)
+const countingDown5 = makeCountDown(90, 5)
+const countingDown2 = makeCountDown(100, 2)
 
-console.log(countingDown())
-console.log(countingDown())
-console.log(countingDown())
-console.log(countingDown())
+console.log(countingDown5())
+console.log(countingDown5())
+console.log(countingDown5())
+console.log(countingDown5())
+
+console.log('')
+console.log(countingDown2())
+console.log(countingDown2())
+console.log(countingDown2())
+console.log(countingDown2())
