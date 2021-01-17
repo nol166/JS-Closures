@@ -10,7 +10,7 @@ When a user enters a search term in the search field and clicks submit, the app 
 
 ## Actual Behavior
 
-When a user enters a search term and clicks the submit button, only images of cats are displayed.
+When a user enters a search term and clicks the submit button, nothing happens.
 
 ## Steps to Reproduce:
 
@@ -22,4 +22,6 @@ When a user enters a search term and clicks the submit button, only images of ca
 
 ## Hints
 
-* How can we use the 
+* How can we use our understanding of lexical scope to help us diagnose the issue with our `searchTerm`?
+
+* Does the search query change after the user updates the text field and clicks submit? 
