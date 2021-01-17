@@ -1,4 +1,4 @@
-// Refactor a countdown function with a hardcoded starting number inside a closure so that it can count down from a provided number
+// Refactor a countdown function with a hardcoded starting number inside a closure so that it can count down from a user provided number
 
 const countDown = (amount, increment) => {
     let countFrom = amount + increment

@@ -6,7 +6,6 @@ function names() {
 }
 
 // TODO: Assign the return value of the names function to a variable called `myFunction`
-const myFunction = names()
 
 // TODO: Invoke myFunction
 myFunction()
