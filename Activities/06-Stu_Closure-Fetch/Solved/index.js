@@ -11,7 +11,7 @@ const APIKEY = '&api_key=dc6zaTOxFJmzC&limit=20'
 // Function that returns a fetch request to the base URL with passed query
 const search = query => {
     console.log(`the search term is ${query}`)
-    return fetch(`${BASEURL}${query}${APIKEY}&rating=pg`)
+    return (newSearch = () => fetch(`${BASEURL}${query}${APIKEY}&rating=pg`))
 }
 
 // Event listener for the submit button
@@ -26,7 +26,7 @@ searchForm.addEventListener('submit', e => {
     imageDiv.innerText = ''
 
     // Invoke our search function and return a function call to displayImages with the images passed in
-    search(searchTerm)
+    search(searchTerm)()
         .then(result => result.json())
         .then(images => {
             return displayImages(images.data)

@@ -2,7 +2,7 @@
 
 Work toward resolving the following issue:
 
-* As a user, I should be able to search and see results for more than one kind of image.
+* As a user, I should be able to search for a term and see images related to my search term.
 
 ## Expected Behavior
 
@@ -24,4 +24,4 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
 * How can we use our understanding of lexical scope to help us diagnose the issue with our `searchTerm`?
 
-* Does the search query change after the user updates the text field and clicks submit? 
+* Use the `console.dir` statements in the developer console to examine the function scope and the variables inside of it. 

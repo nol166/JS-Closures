@@ -14,7 +14,7 @@ var searchTerm = searchField.value
 // Function that returns a fetch request to the base URL with passed query
 const search = query => {
     console.log(`the search term is ${query}`)
-    return fetch(`${BASEURL}${query}${APIKEY}&rating=pg`)
+    return (newSearch = () => fetch(`${BASEURL}${query}${APIKEY}&rating=pg`))
 }
 
 // Event listener for the submit button
@@ -24,9 +24,12 @@ searchForm.addEventListener('submit', e => {
 
     // Clear out any previous results
     imageDiv.innerText = ''
-    console.log('search term when button is clicked', searchTerm)
-    // Invoke our search function and return a function call to displayImages with the images passed in
-    search(searchTerm)
+
+    // console.dir will allow us to see the function scope and the closure in the developer console
+    console.dir(search(searchTerm))
+
+    // Invoking our search function with the search term passed in creates a closure
+    search(searchTerm)()
         .then(result => result.json())
         .then(images => {
             return displayImages(images.data)
@@ -37,6 +40,6 @@ searchForm.addEventListener('submit', e => {
 const displayImages = images => {
     images.map(
         image =>
-            (imageDiv.innerHTML += `<li><img src=${image.images.downsized.url} key=${image.id}></li>`)
+            (imageDiv.innerHTML += `<ul><img src=${image.images.downsized.url} key=${image.id}></ul>`)
     )
 }
