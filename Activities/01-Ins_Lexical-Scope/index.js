@@ -8,7 +8,7 @@ function outerFunction() {
         console.log(`Today we are covering ${topic}`)
     }
 
-    return sayTopic
+    return sayTopic()
 }
 
 // Here we set the value of caller to the return value of outerFunction, which happens to be sayTopic()
