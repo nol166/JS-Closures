@@ -2,15 +2,15 @@
 
 ## Overview
 
-This lesson plan goes over Javascript closures which can at first seem like a confusing and complex concept to students. The good news is, they are very simple once you wrap your head around them. 
+This lesson plan goes over Javascript closures, which can at first seem like a confusing and complex concept to students. The good news is, they are very simple once you wrap your head around them. 
 
-This lesson plan contains three student activities accompanied by a review after each. Before each student activity we will introduce the students to the topic with a short 5 minute demonstration.
+This lesson plan contains three student activities accompanied by a review after each. Before each student activity, we will introduce the students to the topic with a short 5 minute demonstration.
 
 ## Notes for Instructional Staff
 
 * Please be ready to open the `index.html` file enclosed in each demo and activity and open the developer tools for your given browser. This can often be accessed by right clicking anywhere on the page, choosing "inspect element" and then clicking on the "console" tab from there.
 
-* Remember that closures can be a very difficult topic to understand at first. Students may feel frustrated and may even avoid asking questions because of this. Be sure to periodically ask the students how they are feeling about the concepts and revisit them if need be.
+* Remember that closures can be a very difficult topic for students to understand at first. Students may feel frustrated and may even avoid asking questions because of this. Be sure to periodically ask the students how they are feeling about the concepts and revisit them if need be.
 
 ## Goals for Today
 
@@ -42,31 +42,31 @@ function logNumbers() {
 logNumbers()
 ```
 
-* Explain that by looking at this code one might assume that it will log out `0, 1, 2` but it instead logs out `3, 3, 3`.
-
-* Explain that this is a popular interview question for it's ability to test the applicants knowledge of closures and scoping.
-
+* Explain that, by looking at this code, one might assume that it will log out `0, 1, 2` but it instead logs out `3, 3, 3`.
+ 
+* Explain that this is a popular interview question for its ability to test the applicant’s knowledge of closures and scoping.
+ 
 * Inform students that it is okay to not know exactly what closures are just yet because today we are taking a deep dive!
-
-* Reassure students that by the end of this lesson we will be able to recognize the issue with this code and explain why it behaves the way it does.
-
-* Explain that having a solid understanding of scoping and closures will not only help them during interviews but make them better developers.
+ 
+* Reassure students that by the end of this lesson they  will be able to recognize the issue with this code and explain why it behaves the way it does.
+ 
+* Explain that having a solid understanding of scoping and closures will not only help them during interviews, but make them better developers.
 
 ### Part 2: Lexical Scope (Instructor Demo)
 
-* For this demo open [index.html](Activities/01-Ins_Lexical-Scope/index.html) in your browser and demo the following:
-
-  * When we open the browser we are greeted with a message that says to open the developer console.
-
-  * In the dev tools we see a `console.log` message.
-
+* For this demo, open [index.html](Activities/01-Ins_Lexical-Scope/index.html) in your browser and demo the following:
+ 
+ * When we open the browser, we are greeted with a message that instructs us  to open the developer console.
+ 
+ * In the dev tools we see a `console.log` message.
+ 
 * Open [index.js](Activities/01-Ins_Lexical-Scope/index.js) and explain the following:
-  
+
   * `outerFunction` creates a local variable called `topic` and another function called `sayTopic()`.
   
   * `sayTopic` is considered an inner function because it is declared inside the `outerFunction` and only available in the body of `outerFunction`.
   
-  * Take note that the `sayTopic` function doesn't have any local variables of it's own. Instead it can access any variable in the outer function's scope.
+  * Take note that the `sayTopic` function doesn't have any local variables of its own. Instead it can access any variable in the outer function's scope.
 
   * This is an example of "lexical scoping", which describes how a parser resolves variables when dealing with nested functions.
 
@@ -82,7 +82,7 @@ logNumbers()
   }
   ```
 
-  * Notice that we assigned the return value of `outerFunction` to it's own variable called `caller`, and then we invoke it.
+  * Notice that we assigned the return value of `outerFunction` to its own variable called `caller`, and then we invoke it.
 
   ```js
   const caller = outerFunction()
@@ -104,7 +104,7 @@ logNumbers()
 
 ### Part 3: Lexical Scope (Student Activity)
 
-* Point students in the direction of the correct folder for this activity which can be found in the [Unsolved](Activities/02-Stu_Lexical-Scope/Unsolved) folder.
+* Point students in the direction of the correct folder for this activity, which can be found in the [Unsolved](Activities/02-Stu_Lexical-Scope/Unsolved) folder.
 
 * Have the students work together using the directions found in the [README.md](Activities/02-Stu_Lexical-Scope/README.md) file.
 
@@ -112,7 +112,7 @@ logNumbers()
 ```md
 # Access Data from Lexical Scope
 
-In this activity you will work on this user story:
+In this activity, you will work on this user story:
 
 * As a developer, I want to understand lexical scoping by creating a function that accesses the surrounding state.
 
@@ -128,18 +128,18 @@ In this activity you will work on this user story:
 
 ## Hints
 
-* How can the definition of lexical scope help guide our understanding oh this activity?
+* How can the definition of lexical scope help guide our understanding of this activity?
 
 ## Resources
 
 * [Wikipedia Definition of Lexical Scope](https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope)
 ```
 
-* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in googling!
+* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
 ### Part 4: Lexical Scope (Instructor Review)
 
-* ☝️ Ask students how they are feeling about lexical scope?
+* ☝️ Ask students how they are feeling about lexical scope.
 
 * Advise students that we will go through the solutions together and if at any point they have questions, feel free to ask!
 
@@ -151,7 +151,7 @@ In this activity you will work on this user story:
 
 * Navigate to [index.js](Activities/02-Stu_Lexical-Scope/Solved/index.js) and demonstrate the following:
 
-  * This activity starts out with a function declaration called `names` that declared a local variable called `person`
+  * This activity starts out with a function declaration called `names`, that declared a local variable called `person`
 
   ```js
   function names() {
@@ -162,7 +162,7 @@ In this activity you will work on this user story:
   
   * 💡 Notice that the `sayName` function is the return value for the outer function, `names`.
   
-  * By declaring a function that access the variable `person`, we have created a closure.
+  * By declaring a function that accesses the variable `person`, we have created a closure.
   
   * 💡 In Javascript all functions have access to the data in their parent function. This is an example of lexical scoping.  
 
@@ -204,11 +204,11 @@ In this activity you will work on this user story:
 
 ### Part 5: Closure Basics (Instructor Demo)
 
-* For this demo open [index.html](./Activities/03-Ins_Closure-Basics/index.html) in your browser and demo the following:
+* For this demo, open [index.html](./Activities/03-Ins_Closure-Basics/index.html) in your browser and demo the following:
 
-  * When we open the browser we are greeted with a message that says to open the developer console.
+  * When we open the browser, we are greeted with a message that instructs us to open the developer console.
 
-  * In the dev tools we see two `console.log` messages. Both of which seem to be logging out some time in milliseconds.
+  * In the dev tools, we see two `console.log` messages, both of which seem to be logging out some time in milliseconds.
 
 * Open [index.js](Activities/01-Ins_Lexical-Scope/index.js) and explain the following:
 
@@ -229,7 +229,7 @@ In this activity you will work on this user story:
       let startTime = Date.now()
   ```
 
-  * Now we introduce our nested function called `getDelay()` that declares it's own local variable, `elapsed`.
+  * Now we introduce our nested function called `getDelay()` that declares its own local variable, `elapsed`.
   
   * `elapsed` will be used to log out the amount of milliseconds passed from the start to the current time. 
 
@@ -249,13 +249,13 @@ In this activity you will work on this user story:
   }
   ```
 
-  * Just like we did in the previous activity, we set the return value of our outer function, `stopWatch` to it's own variable called `timer`.
+  * Just as we did in the previous activity, we set the return value of our outer function, `stopWatch` to its own variable called `timer`.
 
   ```js
   const timer = stopWatch()
   ```
   
-  * Then we invoke `timer()` twice. The first is to simulate immediate execution, and the latter is wrapped in a `setTimeout` to induce some delay.
+  * Then we invoke `timer()` twice. The first is to simulate immediate execution, and the second is wrapped in a `setTimeout` to induce some delay.
 
   ```js
   timer()
@@ -267,7 +267,7 @@ In this activity you will work on this user story:
 
   * 💡 The Javascript engine keeps track of all of the variables that the nested function relies on, even if the parent function has finished running.
   
-  * As a result, we are able to reference the same exact start time even though the stopwatch function has stopped running long before timer was invoked.
+  * As a result, we are able to reference exactly the same start time, even though the stopwatch function has stopped running long before the timer was invoked.
   
   * We can see the results in the console:
     
@@ -280,20 +280,20 @@ In this activity you will work on this user story:
 
   * 🧑‍🏫 Can you think of an example of closures in Javascript that you didn't know was a closure until now?
   
-  * Since any function that accesses variables outside it's local function scope, all functions that reference the global scope are closures. 
+  * Since any function that accesses variables outside its local function scope, all functions that reference the global scope are closures. 
 
-* To make for a smooth transition into next activity, please ask students to navigate to the [next activity folder](Activities/04-Stu_Closure-Basics) in their IDE.
+* To make for a smooth transition into the next activity, please ask students to navigate to the [next activity folder](Activities/04-Stu_Closure-Basics) in their IDE.
 
 ### Part 6: Closure Basics (Student Activity)
 
 * Make sure that students have navigated to the next activity found in [04-Stu_Closure-Basics](Activities/04-Stu_Closure-Basics)
 
-* Have the students work together using the directions found in the [README.md](./Activities/04-Stu_Closure-Basics/README.md) file.
+* Have the students work together, using the directions found in the [README.md](./Activities/04-Stu_Closure-Basics/README.md) file.
 
 ```md
 # Implement Closures
 
-In this activity you will work on this user story:
+In this activity, you will work on this user story:
 
 * As a developer, I want to demonstrate my knowledge of closures by creating a `makeCountDown` function that accesses the surrounding function state.
 
@@ -324,11 +324,11 @@ In this activity you will work on this user story:
 
 ```
 
-* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in googling!
+* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
 ### Part 7: Closure Basics (Instructor Review)
 
-* ☝️ Ask students how they are feeling about closures?
+* ☝️ Ask students how they are feeling about closures.
 
 * Advise students that we will go through the solutions together and if at any point they have questions, feel free to ask!
 
@@ -344,11 +344,11 @@ In this activity you will work on this user story:
 
   * So far we have discussed local variables and accessing variables from the parent function. But what about variables that are passed as arguments to a function? 
 
-  * The goal of this activity was to create a function that counts down from the `startingNum` and decreases in increments of the `decreasedBy` number.
+  * The goal of this activity is to create a function that counts down from the `startingNum` and decreases in increments of the `decreasedBy` number.
 
 * Open [index.html](Activities/04-Stu_Closure-Basics/Solved/index.html) in your browser and prepare to demonstrate the output in the developer console.
   
-  * When the function is invoked it should remember the state of the number that it is decreasing. For example, if we started with `90` and decreased by `5`, then the output look something like this had we invoked the function 4 different times:
+  * When the function is invoked, it should remember the state of the number that it is decreasing. For example, if we started with `90` and decreased by `5`, then the output should look something like this had we invoked the function 4 different times:
 
   ```js
   90
@@ -357,11 +357,11 @@ In this activity you will work on this user story:
   75
   ```
 
-  * To accomplish this we need to make use of closures in Javascript.
+  * To accomplish this, we need to make use of closures in Javascript.
 
 * Open [index.js](Activities/04-Stu_Closure-Basics/Solved/index.js) in your IDE and demonstrate the following:
   
-  * To start we create a function called `makeCountDown` that accepts two arguments, `startingNum` and `decreasedBy`:
+  * To start, we create a function called `makeCountDown` that accepts two arguments, `startingNum` and `decreasedBy`:
 
   ```js
   const makeCountDown = (startingNum, decreaseBy) => { }
@@ -369,7 +369,7 @@ In this activity you will work on this user story:
 
   * You will notice that our output will include the very number we are starting with. But how do we log out that number before we start decrementing?
   
-  * In order to do this we created a local variable called `countFrom` which is essentially 5 more than the starting number.
+  * In order to do this, we created a local variable called `countFrom` which is essentially 5 more than the starting number.
 
   ```js
   let countFrom = startingNum + decreaseBy
@@ -399,7 +399,7 @@ In this activity you will work on this user story:
   const countingDown2 = makeCountDown(100, 2)
   ```
 
-  * When this code is ran in the browser you can see we have a total output of:
+  * When this code is interpreted in the browser, you can see we have a total output of:
 
   ```sh
   90
@@ -413,11 +413,11 @@ In this activity you will work on this user story:
   94
   ```
 
-  * This is all made possible because of the way closures work. They take a snapshot of the outer context and remember them during execution time.
+  * This is all made possible by the way closures work. They take a snapshot of the outer context and remember them during execution time.
   
 * To end the review, ask students the following questions:
 
-  * 🧑‍🏫 Can someone tell me how this function is different than the ones we have worked on in prior activities?
+  * 🧑‍🏫 Can someone tell me how this function is different from the ones we have worked on in prior activities?
   
   * This function relies on local variables that get passed as arguments to the parent function rather than being declared locally.
   
@@ -425,27 +425,27 @@ In this activity you will work on this user story:
   
   * The nested function is `decrement`, and because it relies `countFrom` from the parent scope, it creates a closure. Also, because `countFrom` depends on the `startingNum` and `decreaseBy` variables, those too are part of the outer context.
 
-  * 🧑‍🏫 Be sure to check out the [MDN Documentation on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#closure) and review some more examples if your still unclear.
+  * 🧑‍🏫 Be sure to check out the [MDN Documentation on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#closure) and review some more examples if you're still unclear.
 
 * Ask students if they have any questions before moving on to the next demo
 
 ### Part 8: Closures and Fetch (Instructor Demo)
 
-* For this demo open [index.html](./Activities/05-Ins_Closure-Fetch/index.html) in your browser and demo the following:
+* For this demo, open [index.html](./Activities/05-Ins_Closure-Fetch/index.html) in your browser and demo the following:
 
   * 🧑‍🏫  So far, we have been using somewhat abstract examples of closures. Now let's take a look at a practical application of closures with `fetch`! 
 
-  * When we open the browser we can see that there is an API request happening and the results are getting displayed to the DOM.
+  * When we open the browser, we can see that there is an API request happening and the results are getting displayed to the DOM.
 
   * This function creates a closure that in turn makes different API requests based on a specific `topic`. In this case, it is searching an API for a random food.
   
-  * Because of closures we could easily create a new instance of this request and pass in a different topic such as `"app"` instead of `"food"`.
+  * By using closures, we could easily create a new instance of this request and pass in a different topic such as `"app"` instead of `"food"`.
 
 * Open [index.js](/Activities/05-Ins_Closure-Fetch/index.js) in the IDE and explain the following:
 
-  * This activity involves some creation of DOM elements that we will go over briefly.
+  * This activity involves some creation of DOM elements, which we will go over briefly.
 
-  * First we create some variables to select different elements on the page. One for `#results` and another for `#results_container`
+  * First, we create some variables to select different elements on the page. One for `#results` and another for `#results_container`
 
   ```js
   const resultsEl = document.getElementById('results')
@@ -454,9 +454,9 @@ In this activity you will work on this user story:
 
   * Next, we declare our outer function `fetchData` which accepts a `topic` and returns a nested function, `newSearch`.
 
-  * 💡 Our nested function depends on the `topic` variable declared in it's parent.
+  * 💡 Our nested function depends on the `topic` variable declared in its parent.
   
-  * We set the `type` argument to have a default value in case none was passed to the function. 
+  * We set the `type` argument to have a default value in case none were passed to the function. 
 
   ```js
   const fetchData = (type = 'food') => {
@@ -468,7 +468,7 @@ In this activity you will work on this user story:
   }
   ```
 
-  * Inside our nested function where we return a fetch request, then we take the data that is returned and first convert it to JSON.
+  * Inside our nested function where we return a fetch request, we take the data that is returned and first convert it to JSON.
   
   * After that, we create some new DOM elements like `newResultsDiv` and a header to display our results on the screen:
 
@@ -491,7 +491,7 @@ In this activity you will work on this user story:
 
   * Keep in mind, the real magic is happening when we create specific instances of our `fetchData` function that will allow us to search for different stuff.
   
-  * 💡 Each one of these variables passes a different `type` to our `fetchData` function. The nested function depends on that type variable, thus creating our closure with a different outer context for each one.
+  * 💡 Each one of these variables passes a different `type` to our `fetchData` function. The nested function depends on that type of variable, thus creating our closure with a different outer context for each one.
 
   ```js
   let searchFood = fetchData()
@@ -499,7 +499,7 @@ In this activity you will work on this user story:
   let searchName = fetchData('name')
   ```
 
-  * Finally we invoke our `searchFood` variable allowing us to see the results on in the browser.
+  * Finally we invoke our `searchFood` variable, allowing us to see the results in the browser.
 
   ```js
   searchFood()
@@ -547,11 +547,11 @@ When a user enters a search term and clicks the submit button, nothing happens.
 * Use the `console.dir` statements in the developer console to examine the function scope and the variables inside of it. 
 ```
 
-* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in googling!
+* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
 ### Part 10: Closures and Fetch (Instructor Review)
 
-* ☝️ Ask students how they are feeling about using fetch and closures?
+* ☝️ Ask students how they are feeling about using fetch and closures.
 
 * Advise students that we will go through the solutions together and if at any point they have questions, feel free to ask!
 
@@ -563,7 +563,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
 * Navigate to [index.html](Activities/06-Stu_Closure-Fetch/Solved/index.html) and demonstrate the following:
 
-  * For this activity we had to diagnose and fix an issue that was causing our search image field to not work properly
+  * For this activity, we had to diagnose and fix an issue that was causing our search image field to not work properly
   
   * As you can see in the browser nothing happens when clicking submit, and the `console.log` messages seem to indicate that our search term isn't being passed properly.
   
@@ -571,9 +571,9 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
 * Open [index.js](Activities/06-Stu_Closure-Fetch/Solved/index.js) in the IDE and explain the following:
 
-  * Much like the last activity we have a lot of DOM manipulation elements that we will cover briefly.
+  * Much like the last activity, we have a lot of DOM manipulation elements that we will cover briefly.
   
-  * First we create some variables for various elements on the page:
+  * First, we create some variables for various elements on the page:
 
   ```js
   const searchForm = document.getElementById('searchForm')
@@ -582,9 +582,9 @@ When a user enters a search term and clicks the submit button, nothing happens.
   const imageDiv = document.getElementById('imageContainer')
   ```
 
-  * Because we are using fetch, we abstracted out our `BASEURL` and `APIKEY` into their own variables that will be used for form a Giphy endpoint.
+  * Because we are using fetch, we abstracted out our `BASEURL` and `APIKEY` into their own variables that will be used to form a Giphy endpoint.
   
-  * ⚠️ Inform students that one would never want to put their API key in a file that will be public. Instead you would want to use something like `dot-env` to manage your private keys. More on that later.
+  * ⚠️ Inform students that one would never want to put their API key in a file that will be public. Instead, you would want to use something like `dot-env` to manage your private keys. More on that later.
   
   ```js
   const BASEURL = 'https://api.giphy.com/v1/gifs/search?q='
@@ -604,9 +604,9 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
   * As we saw in the browser, the way this app is supposed to work is by entering a term into the search field and clicking submit.
   
-  * With all forms, we need event listeners to tell the Javascript engine what todo when the user submits something.
+  * With all forms, we need event listeners to tell the Javascript engine what to do when the user submits something.
 
-  * Inside this function where we call our `search` function passing in what appears to be a variable `searchTerm`
+  * Inside this function, we call our `search` function passing in what appears to be a variable `searchTerm`
 
   ```js
   searchForm.addEventListener('submit', e => {
@@ -619,7 +619,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
   })
   ```
 
-  * If you noticed in the starting code, `searchTerm` was initially declared as a global variable.
+  * You may have noticed in the starting code, `searchTerm` was initially declared as a global variable.
 
   ```js
   var searchTerm = searchField.value
@@ -637,9 +637,9 @@ When a user enters a search term and clicks the submit button, nothing happens.
   })
   ```
 
-  * Inside our event listener callback we prevent the page from refreshing by calling `e.preventDefault()` and we also empty the content of the `imageDiv` so that image results don't compound one another.
+  * Inside our event listener callback, we prevent the page from refreshing by calling `e.preventDefault()` and we also empty the content of the `imageDiv`, so that image results don't compound one another.
 
-  * And now for the the most important part - we invoke our `search` function. This time with a search term that is not empty.
+  * And now for the most important part - we invoke our `search` function. This time with a search term that is not empty.
   
   * 💡 Notice that we can invoke a function's nested function by adding another set of curly braces after invoking it. Here is what our final event listener should look like:
 
@@ -659,7 +659,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
   })
   ```
 
-  * You will notice that we are returning the results of `displayImage()` with the results from our API passed as an argument.
+  * You will notice that we are returning the results of `displayImage()` being invoked with the data from our API request passed as an argument.
 
   * `displayImage` is a helper function that adds `li` elements for each image to the DOM.
 
@@ -672,15 +672,15 @@ When a user enters a search term and clicks the submit button, nothing happens.
   }
   ```
 
-  * 💡 The important thing to take away from this activity is that the closure created by `search` had an outer context that included an empty `searchTerm` variable. Thus causing our bug.
+  * 💡 The important thing to take away from this activity is that the closure created by `search` had an outer context that included an empty `searchTerm` variable, thus causing our bug.
 
-  * 🧑‍🏫 When dealing with closures a very useful tool is `console.dir`. This allows you to take a look at the closure scope for a given function.
+  * 🧑‍🏫 When dealing with closures, a very useful tool is `console.dir`. This allows you to take a look at the closure scope for a given function.
 
   ```js
   console.dir(search(searchTerm))
   ```
 
-  * Here is an example of what the preceding code would display in  we had left our `searchTerm` in the global scope:
+  * Here is an example of what the preceding code would display in the console we had left our `searchTerm` in the global scope:
 
   ```sh
   [[Scopes]]: Scopes[3]
@@ -704,7 +704,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
   * 🧑‍🏫 What is a closure and how can they be useful in reaching your career goals?
   
-  * Closures are a very common interview topic and can also help us become better developers by understanding how the Javascript interpreter works.
+  * Closures are a very common interview topic, and can also help us become better developers by understanding how the Javascript interpreter works.
   
   * What can we do if we don't completely get this?
   
@@ -712,5 +712,5 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
 ### Part 11: End
 
-Thank the students for taking part in your class today and answer any remaining questions regarding the topics covered in class.
+Thank the students for taking part in your class today, and answer any remaining questions regarding the topics covered in class.
 
