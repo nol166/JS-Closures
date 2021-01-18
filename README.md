@@ -26,7 +26,7 @@ At the end of the session students should be able to:
 
 ## Class Content
 
-### Part 1: Stoke Curiosity (Instructor)
+### Part 1: Stoke Curiosity (Instructor - 10 min)
 
 * Welcome the students to class and show them the following brain teaser to begin class
 
@@ -52,7 +52,7 @@ logNumbers()
  
 * Explain that having a solid understanding of scoping and closures will not only help them during interviews, but make them better developers.
 
-### Part 2: Lexical Scope (Instructor Demo)
+### Part 2: Lexical Scope (Instructor Demo - 5 min)
 
 * For this demo, open [index.html](Activities/01-Ins_Lexical-Scope/index.html) in your browser and demo the following:
  
@@ -102,7 +102,7 @@ logNumbers()
   
   * We can refer to the [MDN documentation on Lexical Scoping](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#lexical_scoping)
 
-### Part 3: Lexical Scope (Student Activity)
+### Part 3: Lexical Scope (Student Activity - 15 min)
 
 * Point students in the direction of the correct folder for this activity, which can be found in the [Unsolved](Activities/02-Stu_Lexical-Scope/Unsolved) folder.
 
@@ -137,7 +137,7 @@ In this activity, you will work on this user story:
 
 * Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
-### Part 4: Lexical Scope (Instructor Review)
+### Part 4: Lexical Scope (Instructor Review - 10 min)
 
 * ☝️ Ask students how they are feeling about lexical scope.
 
@@ -202,7 +202,7 @@ In this activity, you will work on this user story:
   
   * 🧑‍🏫 Be sure to check out the [MDN Documentation on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#closure). Don't stress if you are not clear on them yet, we will be discussing them more in the next demo.      
 
-### Part 5: Closure Basics (Instructor Demo)
+### Part 5: Closure Basics (Instructor Demo - 5 min)
 
 * For this demo, open [index.html](./Activities/03-Ins_Closure-Basics/index.html) in your browser and demo the following:
 
@@ -284,7 +284,7 @@ In this activity, you will work on this user story:
 
 * To make for a smooth transition into the next activity, please ask students to navigate to the [next activity folder](Activities/04-Stu_Closure-Basics) in their IDE.
 
-### Part 6: Closure Basics (Student Activity)
+### Part 6: Closure Basics (Student Activity - 15 min)
 
 * Make sure that students have navigated to the next activity found in [04-Stu_Closure-Basics](Activities/04-Stu_Closure-Basics)
 
@@ -326,7 +326,7 @@ In this activity, you will work on this user story:
 
 * Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
-### Part 7: Closure Basics (Instructor Review)
+### Part 7: Closure Basics (Instructor Review - 10 min)
 
 * ☝️ Ask students how they are feeling about closures.
 
@@ -429,7 +429,7 @@ In this activity, you will work on this user story:
 
 * Ask students if they have any questions before moving on to the next demo
 
-### Part 8: Closures and Fetch (Instructor Demo)
+### Part 8: Closures and Fetch (Instructor Demo - 5 min)
 
 * For this demo, open [index.html](./Activities/05-Ins_Closure-Fetch/index.html) in your browser and demo the following:
 
@@ -511,7 +511,7 @@ In this activity, you will work on this user story:
   
   * Closures could be used to create private methods inside of a function similar to other programming languages. 
 
-### Part 9: Closures and Fetch (Student Activity)
+### Part 9: Closures and Fetch (Student Activity - 15 min)
 
 * Make sure that students have navigated to the next activity found in [06-Stu_Closure-Fetch](Activities/06-Stu_Closure-Fetch)
 
@@ -549,7 +549,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
 
 * Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in Googling!
 
-### Part 10: Closures and Fetch (Instructor Review)
+### Part 10: Closures and Fetch (Instructor Review - 10 min)
 
 * ☝️ Ask students how they are feeling about using fetch and closures.
 
