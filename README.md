@@ -220,7 +220,7 @@ In this activity you will work on this user story:
     nested function + outer context = closure
     ```
 
-  * In other words, a closure is a small package containing the nested function  any variables it depends on from the parent scope.
+  * In other words, a closure is a small package containing the nested function and  any variables it depends on from the parent scope.
   
   * In `index.js` we declared an outer function called `stopWatch()` that has a local variable of `startTime`.
 
@@ -250,6 +250,10 @@ In this activity you will work on this user story:
   ```
 
   * Just like we did in the previous activity, we set the return value of our outer function, `stopWatch` to it's own variable called `timer`.
+
+  ```js
+  const timer = stopWatch()
+  ```
   
   * Then we invoke `timer()` twice. The first is to simulate immediate execution, and the latter is wrapped in a `setTimeout` to induce some delay.
 
@@ -344,7 +348,7 @@ In this activity you will work on this user story:
 
 * Open [index.html](Activities/04-Stu_Closure-Basics/Solved/index.html) in your browser and prepare to demonstrate the output in the developer console.
   
-  * When the function is invoked it should remember the state of the number that it is decreasing. For example, if we started with `90` and decreased by `5`, then the output would be something like this:
+  * When the function is invoked it should remember the state of the number that it is decreasing. For example, if we started with `90` and decreased by `5`, then the output look something like this had we invoked the function 4 different times:
 
   ```js
   90
@@ -371,7 +375,7 @@ In this activity you will work on this user story:
   let countFrom = startingNum + decreaseBy
   ```
 
-  * Our inner function, or nested function, returns the result of subtracting `decreasedBy`, in our case `5`, from the `countFrom` variable which will evaluates to `95`:
+  * Our inner function, or nested function, returns the result of subtracting `decreasedBy`, in our case `5`, from the `countFrom` variable which will evaluate to `95`:
   
   * Then we return the `countFrom` from the nested function.
 
@@ -384,7 +388,7 @@ In this activity you will work on this user story:
   })
   ```
 
-  * You can think of this function as a factory that creates other functions with own specific outer context.
+  * You can think of this function as a factory that creates other functions with their own respective outer context.
   
   * To demonstrate this, we created a variable called `countingDown5` with our `startingNum` of `90` and our `decreaseBy` number of `5`.
 
