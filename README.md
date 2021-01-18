@@ -320,6 +320,8 @@ In this activity you will work on this user story:
 
 ```
 
+* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in googling!
+
 ### Part 7: Closure Basics (Instructor Review)
 
 * ☝️ Ask students how they are feeling about closures?
@@ -422,4 +424,289 @@ In this activity you will work on this user story:
   * 🧑‍🏫 Be sure to check out the [MDN Documentation on Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures#closure) and review some more examples if your still unclear.
 
 * Ask students if they have any questions before moving on to the next demo
+
+### Part 8: Closures and Fetch (Instructor Demo)
+
+* For this demo open [index.html](./Activities/05-Ins_Closure-Fetch/index.html) in your browser and demo the following:
+
+  * 🧑‍🏫  So far, we have been using somewhat abstract examples of closures. Now let's take a look at a practical application of closures with `fetch`! 
+
+  * When we open the browser we can see that there is an API request happening and the results are getting displayed to the DOM.
+
+  * This function creates a closure that in turn makes different API requests based on a specific `topic`. In this case, it is searching an API for a random food.
+  
+  * Because of closures we could easily create a new instance of this request and pass in a different topic such as `"app"` instead of `"food"`.
+
+* Open [index.js](/Activities/05-Ins_Closure-Fetch/index.js) in the IDE and explain the following:
+
+  * This activity involves some creation of DOM elements that we will go over briefly.
+
+  * First we create some variables to select different elements on the page. One for `#results` and another for `#results_container`
+
+  ```js
+  const resultsEl = document.getElementById('results')
+  const header = document.getElementById('result_container')
+  ```
+
+  * Next, we declare our outer function `fetchData` which accepts a `topic` and returns a nested function, `newSearch`.
+
+  * 💡 Our nested function depends on the `topic` variable declared in it's parent.
+  
+  * We set the `type` argument to have a default value in case none was passed to the function. 
+
+  ```js
+  const fetchData = (type = 'food') => {
+    return (newSearch = () =>
+        fetch(`https://random-data-api.com/api/${type}/random_${type}`)
+            .then(data => data.json())
+            .then(response => { })
+            .catch(err => console.error(err)))
+  }
+  ```
+
+  * Inside our nested function where we return a fetch request, then we take the data that is returned and first convert it to JSON.
+  
+  * After that, we create some new DOM elements like `newResultsDiv` and a header to display our results on the screen:
+
+  ```js
+  return (newSearch = () =>
+        fetch(`https://random-data-api.com/api/${type}/random_${type}`)
+            .then(data => data.json())
+            .then(response => {
+                let newResultsDiv = document.createElement('span')
+
+                newResultsDiv.innerHTML = `<h4>JSON results for random ${type}</h4>`
+
+                header.prepend(newResultsDiv)
+
+                resultsEl.innerText = JSON.stringify(response)
+            })
+            .catch(err => console.error(err)))
+  }
+  ```
+
+  * Keep in mind, the real magic is happening when we create specific instances of our `fetchData` function that will allow us to search for different stuff.
+  
+  * 💡 Each one of these variables passes a different `type` to our `fetchData` function. The nested function depends on that type variable, thus creating our closure with a different outer context for each one.
+
+  ```js
+  let searchFood = fetchData()
+  let searchApp = fetchData('app')
+  let searchName = fetchData('name')
+  ```
+
+  * Finally we invoke our `searchFood` variable allowing us to see the results on in the browser.
+
+  ```js
+  searchFood()
+  ```
+
+* Ask the students:
+
+  * 🧑‍🏫 Can you think of another practical use for closures in Javascript?
+  
+  * Closures could be used to create private methods inside of a function similar to other programming languages. 
+
+### Part 9: Closures and Fetch (Student Activity)
+
+* Make sure that students have navigated to the next activity found in [06-Stu_Closure-Fetch](Activities/06-Stu_Closure-Fetch)
+
+* Have the students work together using the directions found in the [README.md](Activities/06-Stu_Closure-Fetch/README.md) file.
+
+```md
+# Search Always Displays Pictures of Dogs
+
+Work toward resolving the following issue:
+
+* As a user, I should be able to search for a term and see images related to my search term.
+
+## Expected Behavior
+
+When a user enters a search term in the search field and clicks submit, the app should display images related to the current search term.
+
+## Actual Behavior
+
+When a user enters a search term and clicks the submit button, nothing happens.
+
+## Steps to Reproduce:
+
+1. Open `index.html` in the browser
+
+2. When the page loads, enter a search term of "computer" and click submit.
+
+3. Notice that all the images are related to dogs.
+
+## Hints
+
+* How can we use our understanding of lexical scope to help us diagnose the issue with our `searchTerm`?
+
+* Use the `console.dir` statements in the developer console to examine the function scope and the variables inside of it. 
+```
+
+* Remind students to use each other as a resource to "rubber duck" ideas off one another. Also, there is no shame in googling!
+
+### Part 10: Closures and Fetch (Instructor Review)
+
+* ☝️ Ask students how they are feeling about using fetch and closures?
+
+* Advise students that we will go through the solutions together and if at any point they have questions, feel free to ask!
+
+* The following talking points can be expanded upon for review:
+  
+  * 🥏 Fetch API
+  
+  * 🆔 `document.getElementById`
+
+* Navigate to [index.html](Activities/06-Stu_Closure-Fetch/Solved/index.html) and demonstrate the following:
+
+  * For this activity we had to diagnose and fix an issue that was causing our search image field to not work properly
+  
+  * As you can see in the browser nothing happens when clicking submit, and the `console.log` messages seem to indicate that our search term isn't being passed properly.
+  
+  * This activity was a tricky one, but we will go through the code together and find the cause.
+
+* Open [index.js](Activities/06-Stu_Closure-Fetch/Solved/index.js) in the IDE and explain the following:
+
+  * Much like the last activity we have a lot of DOM manipulation elements that we will cover briefly.
+  
+  * First we create some variables for various elements on the page:
+
+  ```js
+  const searchForm = document.getElementById('searchForm')
+  const searchField = document.getElementById('searchField')
+  const submitBtn = document.getElementById('submitBtn')
+  const imageDiv = document.getElementById('imageContainer')
+  ```
+
+  * Because we are using fetch, we abstracted out our `BASEURL` and `APIKEY` into their own variables that will be used for form a Giphy endpoint.
+  
+  * ⚠️ Inform students that one would never want to put their API key in a file that will be public. Instead you would want to use something like `dot-env` to manage your private keys. More on that later.
+  
+  ```js
+  const BASEURL = 'https://api.giphy.com/v1/gifs/search?q='
+  const APIKEY = '&api_key=dc6zaTOxFJmzC&limit=20'
+  ```
+
+  * We created a parent function called `search` that accepts a `query` parameter and returns a function called `newSearch`.
+  
+  * Template strings are used to form the URL that our fetch request will hit.
+
+  ```js
+  const search = query => {
+    console.log(`the search term is ${query}`)
+    return (newSearch = () => fetch(`${BASEURL}${query}${APIKEY}&rating=pg`))
+  }
+  ```
+
+  * As we saw in the browser, the way this app is supposed to work is by entering a term into the search field and clicking submit.
+  
+  * With all forms, we need event listeners to tell the Javascript engine what todo when the user submits something.
+
+  * Inside this function where we call our `search` function passing in what appears to be a variable `searchTerm`
+
+  ```js
+  searchForm.addEventListener('submit', e => {
+    ...
+    search(searchTerm)()
+        .then(result => result.json())
+        .then(images => {
+            return displayImages(images.data)
+        })
+  })
+  ```
+
+  * If you noticed in the starting code, `searchTerm` was initially declared as a global variable.
+
+  ```js
+  var searchTerm = searchField.value
+  ```
+  
+  * 🐛 This means that at the time the Javascript interpreter parsed this file, the search term had an empty value. Here lies the source of our issue.
+  
+  * In order to resolve this issue, we need to capture the value of the input field when the user clicks the submit button. Let's make `searchTerm` a local variable of our event listener.
+  
+  ```js
+  searchForm.addEventListener('submit', e => {
+    ...
+    let searchTerm = searchField.value
+    ...
+  })
+  ```
+
+  * Inside our event listener callback we prevent the page from refreshing by calling `e.preventDefault()` and we also empty the content of the `imageDiv` so that image results don't compound one another.
+
+  * And now for the the most important part - we invoke our `search` function. This time with a search term that is not empty.
+  
+  * 💡 Notice that we can invoke a function's nested function by adding another set of curly braces after invoking it. Here is what our final event listener should look like:
+
+  ```js
+  searchForm.addEventListener('submit', e => {
+    e.preventDefault()
+
+    let searchTerm = searchField.value
+
+    imageDiv.innerText = ''
+
+    search(searchTerm)()
+        .then(result => result.json())
+        .then(images => {
+            return displayImages(images.data)
+        })
+  })
+  ```
+
+  * You will notice that we are returning the results of `displayImage()` with the results from our API passed as an argument.
+
+  * `displayImage` is a helper function that adds `li` elements for each image to the DOM.
+
+  ```js
+  const displayImages = images => {
+    images.map(
+        image =>
+            (imageDiv.innerHTML += `<li><img src=${image.images.downsized.url} key=${image.id}></li>`)
+    )
+  }
+  ```
+
+  * 💡 The important thing to take away from this activity is that the closure created by `search` had an outer context that included an empty `searchTerm` variable. Thus causing our bug.
+
+  * 🧑‍🏫 When dealing with closures a very useful tool is `console.dir`. This allows you to take a look at the closure scope for a given function.
+
+  ```js
+  console.dir(search(searchTerm))
+  ```
+
+  * Here is an example of what the preceding code would display in  we had left our `searchTerm` in the global scope:
+
+  ```sh
+  [[Scopes]]: Scopes[3]
+    0: Closure (search)
+      query: ""
+    1: Script {searchForm: ... }
+    2: Global
+  ```
+
+  * After moving the `searchTerm` inside our event listener, our closure was able to snapshot the correct value after searching for the term `"Dog"`:
+
+  ```sh
+  [[Scopes]]: Scopes[3]
+    0: Closure (search)
+      query: "Dog"
+    1: Script {searchForm: ... }
+    2: Global
+  ```
+
+* To end the review, ask students the following questions:
+
+  * 🧑‍🏫 What is a closure and how can they be useful in reaching your career goals?
+  
+  * Closures are a very common interview topic and can also help us become better developers by understanding how the Javascript interpreter works.
+  
+  * What can we do if we don't completely get this?
+  
+  * Be sure to review the [MDN Documentation on Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and also the [MDN Documentation on Closures](https://www.w3schools.com/js/js_function_closures.asp)   
+
+### Part 11: End
+
+Thank the students for taking part in your class today and answer any remaining questions regarding the topics covered in class.
 
