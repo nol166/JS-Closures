@@ -46,7 +46,7 @@ logNumbers()
 
 * Explain that this is a popular interview question for it's ability to test the applicants knowledge of closures and scoping.
 
-* Inform students that it is okay to no know exactly what closures are just yet because today we are taking a deep dive!
+* Inform students that it is okay to not know exactly what closures are just yet because today we are taking a deep dive!
 
 * Reassure students that by the end of this lesson we will be able to recognize the issue with this code and explain why it behaves the way it does.
 
@@ -172,9 +172,9 @@ In this activity you will work on this user story:
   }
   ```
 
-  * In order to use the return value from the names function, we have two options. 
+  * In order to use the return value from the names function, we have two options: 
   
-  * We can add an extra set of parenthesis to the end of the names function call or we can set `names` return value to a new variable. Let's go with the former.
+  * We can add an extra set of parenthesis to the end of the `names` function call, or we can set `names` return value to a new variable. Let's go with the latter.
 
   ```js
   const myFunction = names()
@@ -194,7 +194,7 @@ In this activity you will work on this user story:
 
   * 🧑‍🏫 In your own words, what is the lexical scope?
   
-  * Lexical scope describes how the Javascript interpreter resolves variable names within nested functions. It is not only
+  * Lexical scope describes how the Javascript interpreter resolves variable names within nested functions.
   
   * 🧑‍🏫 When in this activity did we create a closure?
   
