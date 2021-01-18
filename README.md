@@ -314,9 +314,9 @@ In this activity, you will work on this user story:
 
 ## Hints
 
-* How can we use the comments inside `index.js` to guide us in what our inner function should return?
+* How can we use the comments inside `index.js` to guide us as to what our inner function should return?
 
-* What kind of function is one that creates other functions?
+* What kind of function is able to create other functions?
 
 ## Bonus
 
@@ -369,13 +369,13 @@ In this activity, you will work on this user story:
 
   * You will notice that our output will include the very number we are starting with. But how do we log out that number before we start decrementing?
   
-  * In order to do this, we created a local variable called `countFrom` which is essentially 5 more than the starting number.
+  * In order to do this, we created a local variable called `countFrom`, which is essentially 5 more than the starting number.
 
   ```js
   let countFrom = startingNum + decreaseBy
   ```
 
-  * Our inner function, or nested function, returns the result of subtracting `decreasedBy`, in our case `5`, from the `countFrom` variable which will evaluate to `95`:
+  * Our inner function, or nested function, returns the result of subtracting `decreasedBy`, in our case `5`, from the `countFrom` variable, which will evaluate to `95`:
   
   * Then we return the `countFrom` from the nested function.
 
@@ -659,7 +659,7 @@ When a user enters a search term and clicks the submit button, nothing happens.
   })
   ```
 
-  * You will notice that we are returning the results of `displayImage()` being invoked with the data from our API request passed as an argument.
+  * You will notice that we are returning the result of `displayImage()` being invoked with the data from our API request. Then, we pass the image data as an argument.
 
   * `displayImage` is a helper function that adds `li` elements for each image to the DOM.
 
